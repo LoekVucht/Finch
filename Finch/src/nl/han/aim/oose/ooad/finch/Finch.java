@@ -17,7 +17,7 @@ public class Finch {
         while (true) {
             System.out.println("Voer een wachtwoord in.");
             wachtwoord = scanner.nextLine();
-            if (wachtwoord.length() != 0) {
+            if (!wachtwoord.isBlank()) {
                 break;
             }
         }
@@ -33,7 +33,7 @@ public class Finch {
                 System.out.println("Deze gebruikersnaam bestaat al.");
                 continue;
             }
-            if (gebruikersnaam.length() != 0) {
+            if (!gebruikersnaam.isBlank()) {
                 break;
             }
         }
