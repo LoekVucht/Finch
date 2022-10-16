@@ -1,0 +1,8 @@
+Êþº¾   = "
+      java/lang/Object <init> ()V	  	 
+   java/lang/System out Ljava/io/PrintStream;  Hello world!
+      java/io/PrintStream println (Ljava/lang/String;)V   nl/han/aim/oose/ooad/finch/Finch Code LineNumberTable LocalVariableTable this "Lnl/han/aim/oose/ooad/finch/Finch; main ([Ljava/lang/String;)V args [Ljava/lang/String; 
+SourceFile 
+Finch.java !               /     *· ±                        	       7     	² 
+¶ ±       
+              	           !
