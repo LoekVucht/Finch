@@ -8,4 +8,8 @@ public class Gebruiker {
         this.gebruikersnaam = gebruikersnaam;
         this.wachtwoord = wachtwoord;
     }
+
+    public String getGebruikersnaam() {
+        return gebruikersnaam;
+    }
 }
