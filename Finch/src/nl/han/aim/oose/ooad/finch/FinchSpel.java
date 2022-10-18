@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class FinchSpel {
     private Gebruiker[] gebruikers;
+    private int iscool;
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
