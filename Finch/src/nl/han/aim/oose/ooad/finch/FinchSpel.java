@@ -13,7 +13,6 @@ public class FinchSpel {
 
     public FinchSpel() {
         gebruikers.add(new Speler("testGebruiker", "12345"));
-        themas.add(new Thema("sport"));
     }
 
     public void voerGebruikersnaamIn() {
