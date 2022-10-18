@@ -3,62 +3,57 @@ package nl.han.aim.oose.ooad.finch;
 import java.util.Scanner;
 
 public class FinchSpel {
-    private Gebruiker[] gebruikers;
-    private int iscool;
-    private static Scanner scanner = new Scanner(System.in);
+    private Gebruiker[] gebruikers = {new Gebruiker("testgebruiker", "12345")};
+    private Gebruiker ingelogdeGebruiker = null;
+    private Scanner scanner = new Scanner(System.in);
+    private Thema[] themas = {new Thema("Sport")};
 
-    public static void main(String[] args) {
-        System.out.println("Welkom bij Finch! Typ \"R\" om je te registreren of \"I\" om in te loggen met een bestaand account.");
-        while (true) {
-            String keuze = krijgInvoer();
-            if (keuze.equals("R")) {
-                registreer(scanner);
-                break;
-            } else if (keuze.equals("I")) {
-                System.out.println("inloggen");
-                // todo
-                break;
-            } else {
-                System.out.println("Typ \"R\" of \"I\".");
+    public void voerGebruikersnaamIn() {
+        System.out.println("Voer een gebruikersnaam in:");
+    }
+
+    public void registreer(String gebruikersnaam, String wachtwoord) {
+        ingelogdeGebruiker = new Gebruiker(gebruikersnaam, wachtwoord);
+    }
+
+    public void spelenQuiz() {
+
+    }
+
+    public void kiesVragenlijst(String vragenlijstnaam) {
+
+    }
+
+    public void beantwoordVraag(String antwoord) {
+
+    }
+
+    public void berekenScore() {
+
+    }
+
+    public void voerWachtwoordIn() {
+        System.out.println("Voer een wachtwoord in");
+    }
+
+    public boolean gebruikersnaamBestaat(String gebruikersnaam) {
+        return getGebruiker(gebruikersnaam) != null;
+    }
+
+    public Gebruiker getGebruiker(String gebruikersnaam) {
+        for (Gebruiker gebruiker : gebruikers) {
+            if (gebruiker.getGebruikersnaam().equals(gebruikersnaam)) {
+                return gebruiker;
             }
         }
-        scanner.close();
+        return null;
     }
 
-    private static String krijgInvoer() {
-        return scanner.nextLine();
+    public void setIngelogdeGebruiker(Gebruiker ingelogdeGebruiker) {
+        this.ingelogdeGebruiker = ingelogdeGebruiker;
     }
 
-    private static void registreer(Scanner scanner) {
-        System.out.println("Gebruikersnaam is " + krijgGebruikersnaamVanInvoer(scanner));
-        System.out.println("Wachtwoord is " + krijgWachtwoordVanInvoer(scanner));
-    }
-
-    private static String krijgWachtwoordVanInvoer(Scanner scanner) {
-        String wachtwoord;
-        while (true) {
-            System.out.println("Voer een wachtwoord in.");
-            wachtwoord = krijgInvoer();
-            if (!wachtwoord.isBlank()) {
-                break;
-            }
-        }
-        return wachtwoord;
-    }
-
-    private static String krijgGebruikersnaamVanInvoer(Scanner scanner) {
-        String gebruikersnaam;
-        while (true) {
-            System.out.println("Voer een gebruikersnaam in.");
-            gebruikersnaam = krijgInvoer();
-            if (gebruikersnaam.equals("bestaat al")) {
-                System.out.println("Deze gebruikersnaam bestaat al.");
-                continue;
-            }
-            if (!gebruikersnaam.isBlank()) {
-                break;
-            }
-        }
-        return gebruikersnaam;
+    public Gebruiker getIngelogdeGebruiker() {
+        return ingelogdeGebruiker;
     }
 }

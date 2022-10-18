@@ -1,15 +1,21 @@
 package nl.han.aim.oose.ooad.finch;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class FinchConsole {
-    private Gebruiker[] gebruikers = {new Gebruiker("testgebruiker", "12345")};
-    private Gebruiker ingelogdeGebruiker = null;
-    private Scanner scanner = new Scanner(System.in);
-
-    public void startRegistratie() {
-
+    public static void main(String[] args) {
+        FinchSpel spel = new FinchSpel();
+        spel.voerGebruikersnaamIn();
+        boolean gebruikersnaamBestaat = true;
+        String gebruikersnaam = null;
+        Scanner scanner = new Scanner(System.in);
+        while (gebruikersnaamBestaat) {
+            gebruikersnaam = scanner.nextLine();
+            gebruikersnaamBestaat = spel.gebruikersnaamBestaat(gebruikersnaam);
+        }
+        spel.voerWachtwoordIn();
+        String wachtwoord = scanner.nextLine();
+        scanner.close();
+        spel.registreer(gebruikersnaam, wachtwoord);
     }
 }
