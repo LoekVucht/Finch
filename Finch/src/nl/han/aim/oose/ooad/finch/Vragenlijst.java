@@ -10,4 +10,8 @@ public class Vragenlijst {
         this.maximaleTijd = maximaleTijdInSeconden;
         this.bedrag = bedrag;
     }
+
+    public String getOnderwerp() {
+        return onderwerp;
+    }
 }

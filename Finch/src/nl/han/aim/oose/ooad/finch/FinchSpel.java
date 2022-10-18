@@ -24,7 +24,9 @@ public class FinchSpel {
     }
 
     public void spelenQuiz() {
-
+        if (ingelogdeGebruiker instanceof Speler) {
+            ((Speler) ingelogdeGebruiker).toonVragenlijsten();
+        }
     }
 
     public void kiesVragenlijst(String vragenlijstnaam) {
@@ -40,7 +42,7 @@ public class FinchSpel {
     }
 
     public void voerWachtwoordIn() {
-        System.out.println("Voer een wachtwoord in");
+        System.out.println("Voer een wachtwoord in:");
     }
 
     public boolean gebruikersnaamBestaat(String gebruikersnaam) {
