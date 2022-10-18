@@ -1,12 +1,10 @@
 package nl.han.aim.oose.ooad.finch.vraag;
 
-import nl.han.aim.oose.ooad.finch.Gebruiker;
-
 import java.util.List;
 
-public class Openvraag extends Vraag{
+public class OpenVraag extends Vraag{
     private List<Antwoord> antwoorden;
-    public Openvraag(String vraag) {
+    public OpenVraag(String vraag) {
         super(vraag);
     }
 

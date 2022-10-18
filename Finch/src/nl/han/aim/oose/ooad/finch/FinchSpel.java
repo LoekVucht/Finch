@@ -1,19 +1,27 @@
 package nl.han.aim.oose.ooad.finch;
 
-import java.util.Scanner;
+import nl.han.aim.oose.ooad.finch.gebruiker.Gebruiker;
+import nl.han.aim.oose.ooad.finch.gebruiker.Speler;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class FinchSpel {
-    private Gebruiker[] gebruikers = {new Gebruiker("testgebruiker", "12345")};
+    private List<Gebruiker> gebruikers = new ArrayList<>();
+    private List<Thema> themas = new ArrayList<>();
     private Gebruiker ingelogdeGebruiker = null;
-    private Scanner scanner = new Scanner(System.in);
-    private Thema[] themas = {new Thema("Sport")};
+
+    public FinchSpel() {
+        gebruikers.add(new Speler("testGebruiker", "12345"));
+        themas.add(new Thema("sport"));
+    }
 
     public void voerGebruikersnaamIn() {
         System.out.println("Voer een gebruikersnaam in:");
     }
 
     public void registreer(String gebruikersnaam, String wachtwoord) {
-        ingelogdeGebruiker = new Gebruiker(gebruikersnaam, wachtwoord);
+        ingelogdeGebruiker = new Speler(gebruikersnaam, wachtwoord);
     }
 
     public void spelenQuiz() {

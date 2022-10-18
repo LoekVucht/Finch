@@ -5,9 +5,9 @@ public class Vragenlijst {
     private int maximaleTijd;
     private double bedrag;
 
-    public Vragenlijst(String onderwerp, int maximaleTijd, double bedrag) {
+    public Vragenlijst(String onderwerp, int maximaleTijdInSeconden, double bedrag) {
         this.onderwerp = onderwerp;
-        this.maximaleTijd = maximaleTijd;
+        this.maximaleTijd = maximaleTijdInSeconden;
         this.bedrag = bedrag;
     }
 }

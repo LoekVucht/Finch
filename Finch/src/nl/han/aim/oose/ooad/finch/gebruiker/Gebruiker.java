@@ -1,8 +1,8 @@
-package nl.han.aim.oose.ooad.finch;
+package nl.han.aim.oose.ooad.finch.gebruiker;
 
-public class Gebruiker {
-    private String gebruikersnaam;
-    private String wachtwoord;
+public abstract class Gebruiker {
+    protected String gebruikersnaam;
+    protected String wachtwoord;
 
     public Gebruiker(String gebruikersnaam, String wachtwoord) {
         this.gebruikersnaam = gebruikersnaam;
