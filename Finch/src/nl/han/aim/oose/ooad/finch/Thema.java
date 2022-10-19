@@ -16,7 +16,7 @@ public class Thema {
     }
     public Vragenlijst krijgVragenlijst(String onderwerp){
         for (Vragenlijst vragenlijst: vragenlijsten){
-            if(vragenlijst.getOnderwerp() == onderwerp){
+            if(vragenlijst.krijgOnderwerp() == onderwerp){
                 return vragenlijst;
             }
         }

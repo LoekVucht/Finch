@@ -1,5 +1,6 @@
 package nl.han.aim.oose.ooad.finch;
 
+import nl.han.aim.oose.ooad.finch.gebruiker.Speler;
 import nl.han.aim.oose.ooad.finch.vraag.Vraag;
 
 import java.util.ArrayList;
@@ -17,6 +18,12 @@ public class Quiz {
 
     public Quiz(Vragenlijst vragenlijst) {
         this.vragenlijst = vragenlijst;
-        quizvragen = vragenlijst.getRandomVragen(10);
+        quizvragen = vragenlijst.krijgRandomVragen(10);
+        puntenBerekenmethode = new NormaleBerekenmethode();
     }
+    public void berekenScore(Speler speler){
+        timer.stop();
+        puntenBerekenmethode.geefAantalPunten(ingevoerdeAntwoorden,timer,quizvragen);
+    }
+
 }

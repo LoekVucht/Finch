@@ -22,7 +22,7 @@ public class Speler extends Gebruiker {
     public void toonVragenlijsten() {
         System.out.println("Je bezit de volgende vragenlijsten:");
         for (Vragenlijst vragenlijst : vragenlijsten) {
-            System.out.println(vragenlijst.getOnderwerp());
+            System.out.println(vragenlijst.krijgOnderwerp());
         }
     }
 
@@ -37,7 +37,7 @@ public class Speler extends Gebruiker {
 
     public Vragenlijst getVragenlijst(String onderwerp) {
         for (Vragenlijst vragenlijst : vragenlijsten) {
-            if (vragenlijst.getOnderwerp().equalsIgnoreCase(onderwerp)) {
+            if (vragenlijst.krijgOnderwerp().equalsIgnoreCase(onderwerp)) {
                 return vragenlijst;
             }
         }
