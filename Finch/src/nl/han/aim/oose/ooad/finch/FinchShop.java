@@ -6,15 +6,28 @@ import java.util.List;
 
 public class FinchShop {
     private List<Muntenpakket> muntenpakketten;
-    private static List<Vragenlijst> vragenlijsten;
+    private static List<Thema> themas;
     private Speler speler;
 
     public FinchShop() {
-        voegVragenlijstToe(new Vragenlijst("voetbal", 100, 100));
-     //   voegVragenlijstToe(new Vragenlijst("voetbal", 100, 100));
+
     }
 
-    private void voegVragenlijstToe(Vragenlijst vragenlijst){
-        vragenlijsten.add(vragenlijst);
+    public void voegVragenlijstToe(String themanaam,Vragenlijst vragenlijst){
+        Thema thema = krijgThema(themanaam);
+        thema.voegVragenlijstToe(vragenlijst);
+    }
+
+    public Thema krijgThema(String name){
+        for (Thema thema: themas){
+            if(thema.krijgNaam() == name){
+                return thema;
+            }
+        }
+        return null;
+    }
+
+    public void maakThema(String themaNaam) {
+        themas.add(new Thema(themaNaam));
     }
 }

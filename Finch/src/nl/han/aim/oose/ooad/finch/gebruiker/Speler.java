@@ -14,9 +14,9 @@ public class Speler extends Gebruiker {
     public Speler(String gebruikersnaam, String wachtwoord) {
         super(gebruikersnaam, wachtwoord);
         vragenlijsten.add(new Vragenlijst("voetbal", 100, 100));
-    }
+        vragenlijsten.add(new Vragenlijst("voetbal", 100, 100));
 
-    // TODO: thema tonen dat bij een vragenlijst hoort? Bijv. "Sport - voetbal" tonen ipv alleen het onderwerp "voetbal"
+    }
     public void toonVragenlijsten() {
         System.out.println("Je bezit de volgende vragenlijsten:");
         List<String> onderwerpen = new ArrayList<>();
