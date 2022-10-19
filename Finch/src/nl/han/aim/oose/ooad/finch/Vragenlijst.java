@@ -46,7 +46,7 @@ public class Vragenlijst {
             while (true) {
                 gekozenVraag = krijgRandomVraag();
                 if (!vragen.contains(gekozenVraag)) {
-                    vragen.add(krijgRandomVraag());
+                    vragen.add(gekozenVraag);
                     break;
                 }
             }
