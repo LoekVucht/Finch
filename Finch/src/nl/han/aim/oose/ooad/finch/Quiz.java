@@ -10,6 +10,7 @@ public class Quiz {
     private Timer timer;
     private Vragenlijst vragenlijst;
     private List<IngevoerdAntwoord> ingevoerdeAntwoorden = new ArrayList<>();
+    private PuntenBerekenmethode puntenBerekenmethode;
 
     public Quiz(Vragenlijst vragenlijst) {
         this.vragenlijst = vragenlijst;
