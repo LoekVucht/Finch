@@ -1,5 +1,6 @@
 package nl.han.aim.oose.ooad.finch.gebruiker;
 
+import nl.han.aim.oose.ooad.finch.FinchShop;
 import nl.han.aim.oose.ooad.finch.Vragenlijst;
 
 import java.util.ArrayList;
@@ -10,18 +11,17 @@ public class Speler extends Gebruiker {
     private double saldo;
     //private Quiz quiz;
     private List<Vragenlijst> vragenlijsten = new ArrayList<>();
+    private FinchShop finchShop = new FinchShop();
 
     public Speler(String gebruikersnaam, String wachtwoord) {
         super(gebruikersnaam, wachtwoord);
-        vragenlijsten.add(new Vragenlijst("voetbal", 100, 100));
-        vragenlijsten.add(new Vragenlijst("voetbal", 100, 100));
 
+     vragenlijsten.add(finchShop.krijgVragenlijst("Voetbal"));
     }
     public void toonVragenlijsten() {
         System.out.println("Je bezit de volgende vragenlijsten:");
-        List<String> onderwerpen = new ArrayList<>();
         for (Vragenlijst vragenlijst : vragenlijsten) {
-            System.out.println(vragenlijst.getOnderwerp());
+            System.out.println(vragenlijst.krijgOnderwerp());
         }
     }
 }

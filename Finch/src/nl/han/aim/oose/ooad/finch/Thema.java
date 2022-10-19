@@ -14,6 +14,14 @@ public class Thema {
     public String krijgNaam() {
         return naam;
     }
+    public Vragenlijst krijgVragenlijst(String onderwerp){
+        for (Vragenlijst vragenlijst: vragenlijsten){
+            if(vragenlijst.krijgOnderwerp() == onderwerp){
+                return vragenlijst;
+            }
+        }
+        return null;
+    }
     public void voegVragenlijstToe(Vragenlijst vragenlijst){
         vragenlijsten.add(vragenlijst);
     }

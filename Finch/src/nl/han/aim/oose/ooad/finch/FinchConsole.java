@@ -44,7 +44,7 @@ public class FinchConsole {
 
     private static void setup() {
         Medewerker medewerker = new Medewerker("setup", "setup");
-        medewerker.maakNieuweVragenlijst("Sport", 100, 100);
+        medewerker.maakNieuweVragenlijst("Voetbal", 100, 100);
         OpenVraag vraag1 = new OpenVraag("wat is messi");
         vraag1.voegAntwoordToe(new Antwoord("voetballer"));
         vraag1.voegAntwoordToe(new Antwoord("een voetballer"));

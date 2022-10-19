@@ -17,7 +17,7 @@ public class Vragenlijst {
         this.bedrag = bedrag;
     }
 
-    public String getOnderwerp() {
+    public String krijgOnderwerp() {
         return onderwerp;
     }
 
