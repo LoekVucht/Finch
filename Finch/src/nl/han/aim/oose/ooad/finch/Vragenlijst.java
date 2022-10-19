@@ -18,7 +18,7 @@ public class Vragenlijst {
         this.bedrag = bedrag;
     }
 
-    public String getOnderwerp() {
+    public String krijgOnderwerp() {
         return onderwerp;
     }
 
@@ -26,18 +26,19 @@ public class Vragenlijst {
         vragen.add(vraag);
     }
 
-    public Vraag getRandomVraag() {
+    public Vraag krijgRandomVraag() {
         return vragen.get(new Random().nextInt(vragen.size()));
     }
 
-    public List<Vraag> getRandomVragen(int aantal) {
+
+    public List<Vraag> krijgRandomVragen(int aantal) {
         List<Vraag> vragen = new ArrayList<>();
         Vraag gekozenVraag = null;
         for (int i = 0; i < aantal; i++) {
             while (true) {
-                gekozenVraag = getRandomVraag();
+                gekozenVraag = krijgRandomVraag();
                 if (!vragen.contains(gekozenVraag)) {
-                    vragen.add(getRandomVraag());
+                    vragen.add(krijgRandomVraag());
                     break;
                 }
             }

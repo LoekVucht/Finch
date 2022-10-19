@@ -6,6 +6,6 @@ public abstract class Vraag {
     public Vraag(String vraag){
         this.vraag= vraag;
     }
-    abstract void toonVraag();
-    abstract boolean isAntwoordJuist(String antwoord);
+    public abstract void toonVraag();
+    public abstract boolean isAntwoordJuist(String antwoord);
 }

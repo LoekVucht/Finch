@@ -6,4 +6,7 @@ public class IngevoerdAntwoord {
     public IngevoerdAntwoord(String invoer) {
         this.invoer = invoer;
     }
+    public String krijgInvoer(){
+        return invoer;
+    }
 }
