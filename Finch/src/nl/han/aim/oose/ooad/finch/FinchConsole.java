@@ -31,10 +31,13 @@ public class FinchConsole {
                 System.out.println("Deze vragenlijst bestaat niet.");
             } else {
                 spel.kiesVragenlijst(vragenlijstInvoer);
+                System.out.println("Je hebt " + spel.krijgMaximaleTijd(vragenlijstInvoer) + " seconden de tijd.");
                 for (int gespeeldeVragen = 0; gespeeldeVragen < 10; gespeeldeVragen++) {
                     spel.toonVraag(vragenlijstInvoer, gespeeldeVragen);
                     String antwoordInvoer = scanner.nextLine();
                     spel.beantwoordVraag(gespeeldeVragen, antwoordInvoer);
+                    System.out.println("Je hebt nog " + (spel.krijgMaximaleTijd(vragenlijstInvoer) - spel.krijgAantalSecondenVerstreken())
+                            + " seconden over.");
                 }
                 spel.berekenScore();
                 break;
@@ -64,9 +67,11 @@ public class FinchConsole {
         vraag1.voegAntwoordToe(new Antwoord("een voetballer"));
         medewerker.voegVraagToe(vraag1);
 
-        OpenVraag vraag2 = new OpenVraag("Waarom is voetbal zo'n grote sport?");
-        vraag2.voegAntwoordToe(new Antwoord("daarom"));
-        vraag2.voegAntwoordToe(new Antwoord("gewoon"));
+        Meerkeuzevraag vraag2 = new Meerkeuzevraag("Wat is de oudste professionele voetbalclub van Nederland?");
+        vraag2.voegAntwoordToe(new Antwoordoptie("Vitesse", false));
+        vraag2.voegAntwoordToe(new Antwoordoptie("Sparta", true));
+        vraag2.voegAntwoordToe(new Antwoordoptie("Willem II", false));
+        vraag2.voegAntwoordToe(new Antwoordoptie("FC Utrecht", false));
         medewerker.voegVraagToe(vraag2);
 
         Meerkeuzevraag vraag3 = new Meerkeuzevraag("Waar speel je voetbal mee?");
@@ -80,14 +85,16 @@ public class FinchConsole {
         vraag4.voegAntwoordToe(new Antwoord("Qatar"));
         medewerker.voegVraagToe(vraag4);
 
-        OpenVraag vraag5 = new OpenVraag("waarom is voetbal zo'n grote sport");
-        vraag5.voegAntwoordToe(new Antwoord("daarom"));
-        vraag5.voegAntwoordToe(new Antwoord("gewoon"));
+        Meerkeuzevraag vraag5 = new Meerkeuzevraag("Welk land heeft de meeste WK's gewonnen?");
+        vraag5.voegAntwoordToe(new Antwoordoptie("Brazilië", true));
+        vraag5.voegAntwoordToe(new Antwoordoptie("Duitsland", false));
+        vraag5.voegAntwoordToe(new Antwoordoptie("Italië", false));
+        vraag5.voegAntwoordToe(new Antwoordoptie("Spanje", false));
         medewerker.voegVraagToe(vraag5);
 
-        Meerkeuzevraag vraag6 = new Meerkeuzevraag("Welke club uit Limburg speelt komt uit in de Eredivisie?");
+        Meerkeuzevraag vraag6 = new Meerkeuzevraag("Welke club die uit Limburg komt speelt in de Eredivisie?");
         vraag6.voegAntwoordToe(new Antwoordoptie("Fortuna Sittard", true));
-        vraag6.voegAntwoordToe(new Antwoordoptie("MVV", true));
+        vraag6.voegAntwoordToe(new Antwoordoptie("MVV", false));
         vraag6.voegAntwoordToe(new Antwoordoptie("Roda JC", false));
         vraag6.voegAntwoordToe(new Antwoordoptie("VVV Venlo", false));
         medewerker.voegVraagToe(vraag6);
@@ -103,9 +110,9 @@ public class FinchConsole {
         vraag8.voegAntwoordToe(new Antwoord("Sven van Beek"));
         medewerker.voegVraagToe(vraag8);
 
-        OpenVraag vraag9 = new OpenVraag("test");
-        vraag9.voegAntwoordToe(new Antwoord("daarom"));
-        vraag9.voegAntwoordToe(new Antwoord("gewoon"));
+        OpenVraag vraag9 = new OpenVraag("In hoeveel WK-finales heeft Nederland gespeeld?");
+        vraag9.voegAntwoordToe(new Antwoord("3"));
+        vraag9.voegAntwoordToe(new Antwoord("drie"));
         medewerker.voegVraagToe(vraag9);
 
         Meerkeuzevraag vraag10 = new Meerkeuzevraag("Guus Hiddink zorgde ervoor dat een Gelderse plaats een bedevaartsoord werd voor Zuid-Koreanen. Welke plaats betreft dit?");

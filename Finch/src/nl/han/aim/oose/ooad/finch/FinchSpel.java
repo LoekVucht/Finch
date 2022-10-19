@@ -60,6 +60,15 @@ public class FinchSpel {
         return false;
     }
 
+    public int krijgAantalSecondenVerstreken() {
+        Timer timer = ((Speler) ingelogdeGebruiker).getQuiz().getTimer();
+        return (int) (timer.getAantalSysteemSecondenVerstreken() - timer.getStartTijdInSeconden());
+    }
+
+    public int krijgMaximaleTijd(String onderwerp) {
+        return ((Speler) ingelogdeGebruiker).getVragenlijst(onderwerp).getMaximaleTijd();
+    }
+
     public void voerWachtwoordIn() {
         System.out.println("Voer een wachtwoord in:");
     }

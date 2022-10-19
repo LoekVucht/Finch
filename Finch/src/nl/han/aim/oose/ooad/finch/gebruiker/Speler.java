@@ -59,4 +59,8 @@ public class Speler extends Gebruiker {
     public void berekenScore() {
         quiz.berekenScore(this);
     }
+
+    public Quiz getQuiz() {
+        return quiz;
+    }
 }

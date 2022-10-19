@@ -27,7 +27,7 @@ public class Quiz {
 
     public void berekenScore(Speler speler) {
         timer.stop();
-        System.out.println(puntenBerekenmethode.geefAantalPunten(ingevoerdeAntwoorden, timer, quizvragen));
+        System.out.println("Score: " + puntenBerekenmethode.geefAantalPunten(ingevoerdeAntwoorden, timer, quizvragen));
     }
 
     public void beantwoordVraag(int vraagIndex, String antwoord) {
@@ -36,5 +36,9 @@ public class Quiz {
 
     public List<Vraag> getQuizvragen() {
         return quizvragen;
+    }
+
+    public Timer getTimer() {
+        return timer;
     }
 }

@@ -65,4 +65,8 @@ public class Vragenlijst {
             lifetimeBest.controleerLifeTimeBest(punten, time, speler);
         }
     }
+
+    public int getMaximaleTijd() {
+        return maximaleTijd;
+    }
 }
