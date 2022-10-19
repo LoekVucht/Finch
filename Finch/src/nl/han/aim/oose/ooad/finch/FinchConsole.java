@@ -19,23 +19,28 @@ public class FinchConsole {
         while (true) {
             System.out.println("Voer een S in als je een quiz wilt spelen.");
             String invoer = scanner.nextLine();
-            if (invoer.equals("S")) {
+            if (invoer.equalsIgnoreCase("S")) {
                 spel.spelenQuiz();
                 break;
             }
         }
         while (true) {
             System.out.println("Voer een vragenlijst in:");
-            String invoer = scanner.nextLine();
-            if (!spel.vragenlijstBestaat(invoer)) {
+            String vragenlijstInvoer = scanner.nextLine();
+            if (!spel.vragenlijstBestaat(vragenlijstInvoer)) {
                 System.out.println("Deze vragenlijst bestaat niet.");
             } else {
-                spel.kiesVragenlijst(invoer);
+                spel.kiesVragenlijst(vragenlijstInvoer);
+                for (int gespeeldeVragen = 0; gespeeldeVragen < 10; gespeeldeVragen++) {
+                    spel.toonVraag(vragenlijstInvoer, gespeeldeVragen);
+                    String antwoordInvoer = scanner.nextLine();
+                    spel.beantwoordVraag(gespeeldeVragen, antwoordInvoer);
+                }
+                spel.berekenScore();
                 break;
             }
         }
     }
-
 
     private static void registreerGebruiker(FinchSpel spel, Scanner scanner) {
         spel.voerGebruikersnaamIn();

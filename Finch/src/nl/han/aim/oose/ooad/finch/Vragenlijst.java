@@ -19,7 +19,8 @@ public class Vragenlijst {
         this.maximaleTijd = maximaleTijdInSeconden;
         this.bedrag = bedrag;
     }
-    public Vragenlijst(Vragenlijst vragenlijst){
+
+    public Vragenlijst(Vragenlijst vragenlijst) {
         this.onderwerp = vragenlijst.onderwerp;
         this.maximaleTijd = vragenlijst.maximaleTijd;
         this.bedrag = vragenlijst.bedrag;
@@ -38,7 +39,6 @@ public class Vragenlijst {
         return vragen.get(new Random().nextInt(vragen.size()));
     }
 
-
     public List<Vraag> krijgRandomVragen(int aantal) {
         List<Vraag> vragen = new ArrayList<>();
         Vraag gekozenVraag = null;
@@ -53,11 +53,16 @@ public class Vragenlijst {
         }
         return vragen;
     }
-    public void werkLifeTimeBestBij(int punten, Timer time, Speler speler){
-if(lifetimeBest == null){
-lifetimeBest = new LifetimeBest(punten, time, speler);
-}else{
-    lifetimeBest.controleerLifeTimeBest(punten, time, speler);
-}
+
+    public Vraag getVraag(int vraagIndex) {
+        return vragen.get(vraagIndex);
+    }
+
+    public void werkLifeTimeBestBij(int punten, Timer time, Speler speler) {
+        if (lifetimeBest == null) {
+            lifetimeBest = new LifetimeBest(punten, time, speler);
+        } else {
+            lifetimeBest.controleerLifeTimeBest(punten, time, speler);
+        }
     }
 }

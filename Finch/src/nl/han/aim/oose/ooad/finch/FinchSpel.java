@@ -35,19 +35,29 @@ public class FinchSpel {
         }
     }
 
+    public void berekenScore() {
+        if (ingelogdeGebruiker instanceof Speler) {
+            ((Speler) ingelogdeGebruiker).berekenScore();
+        }
+    }
+
+    public void beantwoordVraag(int vraagIndex, String antwoord) {
+        if (ingelogdeGebruiker instanceof Speler) {
+            ((Speler) ingelogdeGebruiker).beantwoordVraag(vraagIndex, antwoord);
+        }
+    }
+
+    public void toonVraag(String onderwerp, int vraagIndex) {
+        if (ingelogdeGebruiker instanceof Speler) {
+            ((Speler) ingelogdeGebruiker).toonVraag(onderwerp, vraagIndex);
+        }
+    }
+
     public boolean vragenlijstBestaat(String onderwerp) {
         if (ingelogdeGebruiker instanceof Speler) {
             return ((Speler) ingelogdeGebruiker).vragenlijstBestaat(onderwerp);
         }
         return false;
-    }
-
-    public void beantwoordVraag(String antwoord) {
-
-    }
-
-    public void berekenScore() {
-
     }
 
     public void voerWachtwoordIn() {

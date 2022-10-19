@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Speler extends Gebruiker {
     private double saldo;
-    //private Quiz quiz;
+    private Quiz quiz;
     private List<Vragenlijst> vragenlijsten = new ArrayList<>();
     private FinchShop finchShop = new FinchShop();
 
@@ -32,7 +32,7 @@ public class Speler extends Gebruiker {
 
     public void doeQuiz(String vragenlijstNaam) {
         Vragenlijst vragenlijst = getVragenlijst(vragenlijstNaam);
-        Quiz quiz = new Quiz(vragenlijst);
+        quiz = new Quiz(vragenlijst);
     }
 
     public boolean vragenlijstBestaat(String onderwerp) {
@@ -46,5 +46,17 @@ public class Speler extends Gebruiker {
             }
         }
         return null;
+    }
+
+    public void toonVraag(String onderwerp, int vraagIndex) {
+        quiz.getQuizvragen().get(vraagIndex).toonVraag();
+    }
+
+    public void beantwoordVraag(int vraagIndex, String antwoord) {
+        quiz.beantwoordVraag(vraagIndex, antwoord);
+    }
+
+    public void berekenScore() {
+        quiz.berekenScore(this);
     }
 }

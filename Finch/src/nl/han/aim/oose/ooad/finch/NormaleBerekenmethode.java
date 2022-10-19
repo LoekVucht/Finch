@@ -10,11 +10,10 @@ public class NormaleBerekenmethode implements PuntenBerekenmethode {
     public int geefAantalPunten(List<IngevoerdAntwoord> ingevoerdeVragen, Timer timer, List<Vraag> quizVragen) {
         int aantalGoed= berekenAantalGoed(ingevoerdeVragen,quizVragen);
         int punten = 0;
-        if(aantalGoed == quizVragen.size()+1){
-            punten =+ 2;
+        if(aantalGoed == quizVragen.size()){
+            punten += 50;
         }
-        aantalGoed = aantalGoed * 10;
-        punten += aantalGoed;
+        punten += aantalGoed * 10;
         return punten;
     }
 }

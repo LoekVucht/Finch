@@ -5,9 +5,9 @@ import nl.han.aim.oose.ooad.finch.vraag.Vraag;
 import java.util.List;
 
 public interface PuntenBerekenmethode {
-    public int geefAantalPunten(List<IngevoerdAntwoord> ingevoerdeAntwoorden, Timer timer,List<Vraag> quizVragen);
+    int geefAantalPunten(List<IngevoerdAntwoord> ingevoerdeAntwoorden, Timer timer,List<Vraag> quizVragen);
 
-   public default int berekenAantalGoed(List<IngevoerdAntwoord> ingevoerdeAntwoorden,List<Vraag> quizVragen){
+   default int berekenAantalGoed(List<IngevoerdAntwoord> ingevoerdeAntwoorden, List<Vraag> quizVragen){
        int aantalGoed = 0;
        for(int i = 0; i < ingevoerdeAntwoorden.size(); i++){
            String invoer = ingevoerdeAntwoorden.get(i).krijgInvoer();
