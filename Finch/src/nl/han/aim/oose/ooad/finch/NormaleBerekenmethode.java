@@ -8,6 +8,13 @@ public class NormaleBerekenmethode implements PuntenBerekenmethode {
 
     @Override
     public int geefAantalPunten(List<IngevoerdAntwoord> ingevoerdeVragen, Timer timer, List<Vraag> quizVragen) {
-        return berekenAantalGoed(ingevoerdeVragen,quizVragen) * 10;
+        int aantalGoed= berekenAantalGoed(ingevoerdeVragen,quizVragen);
+        int punten = 0;
+        if(aantalGoed == quizVragen.size()+1){
+            punten =+ 2;
+        }
+        aantalGoed = aantalGoed * 10;
+        punten += aantalGoed;
+        return punten;
     }
 }
