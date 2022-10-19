@@ -20,7 +20,7 @@ public class OpenVraag extends Vraag{
     @Override
     public boolean isAntwoordJuist(String ingevoerdAntwoord) {
         for (Antwoord antwoord : antwoorden) {
-            if (antwoord.getAntwoord().equals(ingevoerdAntwoord)) {
+            if (antwoord.getAntwoord().equalsIgnoreCase(ingevoerdAntwoord)) {
                 return true;
             }
         }

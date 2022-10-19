@@ -76,9 +76,8 @@ public class FinchConsole {
         vraag3.voegAntwoordToe(new Antwoordoptie("bal", false));
         medewerker.voegVraagToe(vraag3);
 
-        OpenVraag vraag4 = new OpenVraag("Wat is messi?");
-        vraag4.voegAntwoordToe(new Antwoord("voetballer"));
-        vraag4.voegAntwoordToe(new Antwoord("een voetballer"));
+        OpenVraag vraag4 = new OpenVraag("In welk land zal het WK 2022 worden gehouden?");
+        vraag4.voegAntwoordToe(new Antwoord("Qatar"));
         medewerker.voegVraagToe(vraag4);
 
         OpenVraag vraag5 = new OpenVraag("waarom is voetbal zo'n grote sport");
@@ -86,35 +85,34 @@ public class FinchConsole {
         vraag5.voegAntwoordToe(new Antwoord("gewoon"));
         medewerker.voegVraagToe(vraag5);
 
-        Meerkeuzevraag vraag6 = new Meerkeuzevraag("waar speel je voetbal mee?");
-        vraag6.voegAntwoordToe(new Antwoordoptie("basketbal", false));
-        vraag6.voegAntwoordToe(new Antwoordoptie("voetbal", true));
-        vraag6.voegAntwoordToe(new Antwoordoptie("skippybal", false));
-        vraag6.voegAntwoordToe(new Antwoordoptie("bal", false));
+        Meerkeuzevraag vraag6 = new Meerkeuzevraag("Welke club uit Limburg speelt komt uit in de Eredivisie?");
+        vraag6.voegAntwoordToe(new Antwoordoptie("Fortuna Sittard", true));
+        vraag6.voegAntwoordToe(new Antwoordoptie("MVV", true));
+        vraag6.voegAntwoordToe(new Antwoordoptie("Roda JC", false));
+        vraag6.voegAntwoordToe(new Antwoordoptie("VVV Venlo", false));
         medewerker.voegVraagToe(vraag6);
 
-        Meerkeuzevraag vraag7 = new Meerkeuzevraag("waar speel je voetbal mee?");
-        vraag7.voegAntwoordToe(new Antwoordoptie("basketbal", false));
-        vraag7.voegAntwoordToe(new Antwoordoptie("voetbal", true));
-        vraag7.voegAntwoordToe(new Antwoordoptie("skippybal", false));
-        vraag7.voegAntwoordToe(new Antwoordoptie("bal", false));
+        Meerkeuzevraag vraag7 = new Meerkeuzevraag("Wat is de huidige trainer van Vitesse?");
+        vraag7.voegAntwoordToe(new Antwoordoptie("Thomas Letsch", false));
+        vraag7.voegAntwoordToe(new Antwoordoptie("Philip Cocu", true));
+        vraag7.voegAntwoordToe(new Antwoordoptie("Edward Sturing", false));
+        vraag7.voegAntwoordToe(new Antwoordoptie("Theo Janssen", false));
         medewerker.voegVraagToe(vraag7);
 
-        OpenVraag vraag8 = new OpenVraag("wat is messi");
-        vraag8.voegAntwoordToe(new Antwoord("voetballer"));
-        vraag8.voegAntwoordToe(new Antwoord("een voetballer"));
+        OpenVraag vraag8 = new OpenVraag("Wie is de recordhouder eigen doelpunten in betaald voetbal?");
+        vraag8.voegAntwoordToe(new Antwoord("Sven van Beek"));
         medewerker.voegVraagToe(vraag8);
 
-        OpenVraag vraag9 = new OpenVraag("waarom is voetbal zo'n grote sport");
+        OpenVraag vraag9 = new OpenVraag("test");
         vraag9.voegAntwoordToe(new Antwoord("daarom"));
         vraag9.voegAntwoordToe(new Antwoord("gewoon"));
         medewerker.voegVraagToe(vraag9);
 
-        Meerkeuzevraag vraag10 = new Meerkeuzevraag("waar speel je voetbal mee?");
-        vraag10.voegAntwoordToe(new Antwoordoptie("basketbal", false));
-        vraag10.voegAntwoordToe(new Antwoordoptie("voetbal", true));
-        vraag10.voegAntwoordToe(new Antwoordoptie("skippybal", false));
-        vraag10.voegAntwoordToe(new Antwoordoptie("bal", false));
+        Meerkeuzevraag vraag10 = new Meerkeuzevraag("Guus Hiddink zorgde ervoor dat een Gelderse plaats een bedevaartsoord werd voor Zuid-Koreanen. Welke plaats betreft dit?");
+        vraag10.voegAntwoordToe(new Antwoordoptie("Doesburgh", false));
+        vraag10.voegAntwoordToe(new Antwoordoptie("Groenlo", false));
+        vraag10.voegAntwoordToe(new Antwoordoptie("Varsseveld", true));
+        vraag10.voegAntwoordToe(new Antwoordoptie("Aalten", false));
         medewerker.voegVraagToe(vraag10);
 
         medewerker.voegThemaToe("sport");

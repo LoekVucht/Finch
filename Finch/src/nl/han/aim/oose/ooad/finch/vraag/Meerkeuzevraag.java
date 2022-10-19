@@ -25,7 +25,7 @@ public class Meerkeuzevraag extends Vraag {
     @Override
     public boolean isAntwoordJuist(String antwoord) {
         for (Antwoordoptie antwoordOptie : antwoordopties) {
-            if (antwoordOptie.getAntwoord().equals(antwoord)) {
+            if (antwoordOptie.getAntwoord().equalsIgnoreCase(antwoord)) {
                 return true;
             }
         }
