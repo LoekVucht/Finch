@@ -1,6 +1,5 @@
 package nl.han.aim.oose.ooad.finch;
 
-import nl.han.aim.oose.ooad.finch.gebruiker.Gebruiker;
 import nl.han.aim.oose.ooad.finch.gebruiker.Medewerker;
 import nl.han.aim.oose.ooad.finch.vraag.*;
 
@@ -25,6 +24,16 @@ public class FinchConsole {
                 break;
             }
         }
+        while (true) {
+            System.out.println("Voer een vragenlijst in:");
+            String invoer = scanner.nextLine();
+            if (!spel.vragenlijstBestaat(invoer)) {
+                System.out.println("Deze vragenlijst bestaat niet.");
+            } else {
+                spel.kiesVragenlijst(invoer);
+                break;
+            }
+        }
     }
 
 
@@ -45,24 +54,24 @@ public class FinchConsole {
     private static void setup() {
         Medewerker medewerker = new Medewerker("setup", "setup");
         medewerker.maakNieuweVragenlijst("Voetbal", 100, 100);
-        OpenVraag vraag1 = new OpenVraag("wat is messi");
+        OpenVraag vraag1 = new OpenVraag("Wat is Messi?");
         vraag1.voegAntwoordToe(new Antwoord("voetballer"));
         vraag1.voegAntwoordToe(new Antwoord("een voetballer"));
         medewerker.voegVraagToe(vraag1);
 
-        OpenVraag vraag2 = new OpenVraag("waarom is voetbal zo'n grote sport");
+        OpenVraag vraag2 = new OpenVraag("Waarom is voetbal zo'n grote sport?");
         vraag2.voegAntwoordToe(new Antwoord("daarom"));
         vraag2.voegAntwoordToe(new Antwoord("gewoon"));
         medewerker.voegVraagToe(vraag2);
 
-        Meerkeuzevraag vraag3 = new Meerkeuzevraag("waar speel je voetbal mee?");
+        Meerkeuzevraag vraag3 = new Meerkeuzevraag("Waar speel je voetbal mee?");
         vraag3.voegAntwoordToe(new Antwoordoptie("basketbal", false));
         vraag3.voegAntwoordToe(new Antwoordoptie("voetbal", true));
         vraag3.voegAntwoordToe(new Antwoordoptie("skippybal", false));
         vraag3.voegAntwoordToe(new Antwoordoptie("bal", false));
         medewerker.voegVraagToe(vraag3);
 
-        OpenVraag vraag4 = new OpenVraag("wat is messi");
+        OpenVraag vraag4 = new OpenVraag("Wat is messi?");
         vraag4.voegAntwoordToe(new Antwoord("voetballer"));
         vraag4.voegAntwoordToe(new Antwoord("een voetballer"));
         medewerker.voegVraagToe(vraag4);
@@ -103,7 +112,7 @@ public class FinchConsole {
         vraag10.voegAntwoordToe(new Antwoordoptie("bal", false));
         medewerker.voegVraagToe(vraag10);
 
-        medewerker.voegThema("sport");
-        medewerker.voegVragenlijsToe("sport");
+        medewerker.voegThemaToe("sport");
+        medewerker.voegVragenlijstToe("sport");
     }
 }

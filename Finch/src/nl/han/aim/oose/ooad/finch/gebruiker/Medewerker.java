@@ -1,12 +1,8 @@
 package nl.han.aim.oose.ooad.finch.gebruiker;
 
 import nl.han.aim.oose.ooad.finch.FinchShop;
-import nl.han.aim.oose.ooad.finch.Thema;
 import nl.han.aim.oose.ooad.finch.Vragenlijst;
-import nl.han.aim.oose.ooad.finch.gebruiker.Gebruiker;
 import nl.han.aim.oose.ooad.finch.vraag.Vraag;
-
-import java.util.List;
 
 public class Medewerker extends Gebruiker {
     private FinchShop finchShop;
@@ -22,12 +18,12 @@ public class Medewerker extends Gebruiker {
     }
 
     public void voegVraagToe(Vraag vraag) {
-        vragenlijst.voegVraag(vraag);
+        vragenlijst.voegVraagToe(vraag);
     }
-    public void voegVragenlijsToe(String themaNaam) {
+    public void voegVragenlijstToe(String themaNaam) {
         finchShop.voegVragenlijstToe(themaNaam,vragenlijst);
     }
-    public void voegThema(String themaNaam){
+    public void voegThemaToe(String themaNaam){
         finchShop.maakThema(themaNaam);
     }
 

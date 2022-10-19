@@ -1,11 +1,11 @@
 package nl.han.aim.oose.ooad.finch.gebruiker;
 
 import nl.han.aim.oose.ooad.finch.FinchShop;
+import nl.han.aim.oose.ooad.finch.Quiz;
 import nl.han.aim.oose.ooad.finch.Vragenlijst;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Speler extends Gebruiker {
     private double saldo;
@@ -18,10 +18,29 @@ public class Speler extends Gebruiker {
 
      vragenlijsten.add(finchShop.krijgVragenlijst("Voetbal"));
     }
+
     public void toonVragenlijsten() {
         System.out.println("Je bezit de volgende vragenlijsten:");
         for (Vragenlijst vragenlijst : vragenlijsten) {
-            System.out.println(vragenlijst.krijgOnderwerp());
+            System.out.println(vragenlijst.getOnderwerp());
         }
+    }
+
+    public void doeQuiz(String vragenlijstNaam) {
+        Vragenlijst vragenlijst = getVragenlijst(vragenlijstNaam);
+        Quiz quiz = new Quiz(vragenlijst);
+    }
+
+    public boolean vragenlijstBestaat(String onderwerp) {
+        return getVragenlijst(onderwerp) != null;
+    }
+
+    public Vragenlijst getVragenlijst(String onderwerp) {
+        for (Vragenlijst vragenlijst : vragenlijsten) {
+            if (vragenlijst.getOnderwerp().equalsIgnoreCase(onderwerp)) {
+                return vragenlijst;
+            }
+        }
+        return null;
     }
 }

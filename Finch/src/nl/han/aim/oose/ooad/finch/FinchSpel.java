@@ -29,8 +29,17 @@ public class FinchSpel {
         }
     }
 
-    public void kiesVragenlijst(String vragenlijstnaam) {
+    public void kiesVragenlijst(String vragenlijstNaam) {
+        if (ingelogdeGebruiker instanceof Speler) {
+            ((Speler) ingelogdeGebruiker).doeQuiz(vragenlijstNaam);
+        }
+    }
 
+    public boolean vragenlijstBestaat(String onderwerp) {
+        if (ingelogdeGebruiker instanceof Speler) {
+            return ((Speler) ingelogdeGebruiker).vragenlijstBestaat(onderwerp);
+        }
+        return false;
     }
 
     public void beantwoordVraag(String antwoord) {
