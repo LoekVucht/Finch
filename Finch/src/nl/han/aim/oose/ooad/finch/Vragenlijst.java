@@ -1,5 +1,6 @@
 package nl.han.aim.oose.ooad.finch;
 
+import nl.han.aim.oose.ooad.finch.gebruiker.Speler;
 import nl.han.aim.oose.ooad.finch.vraag.Vraag;
 
 import java.util.ArrayList;
@@ -10,6 +11,7 @@ public class Vragenlijst {
     private String onderwerp;
     private int maximaleTijd;
     private double bedrag;
+    private LifetimeBest lifetimeBest;
     private List<Vraag> vragen = new ArrayList<>();
 
     public Vragenlijst(String onderwerp, int maximaleTijdInSeconden, double bedrag) {
@@ -50,5 +52,12 @@ public class Vragenlijst {
             }
         }
         return vragen;
+    }
+    public void werkLifeTimeBestBij(int punten, Timer time, Speler speler){
+if(lifetimeBest == null){
+lifetimeBest = new LifetimeBest(punten, time, speler);
+}else{
+    lifetimeBest.controleerLifeTimeBest(punten, time, speler);
+}
     }
 }

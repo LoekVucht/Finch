@@ -16,7 +16,7 @@ public class Speler extends Gebruiker {
     public Speler(String gebruikersnaam, String wachtwoord) {
         super(gebruikersnaam, wachtwoord);
 
-     vragenlijsten.add(finchShop.krijgVragenlijst("Voetbal"));
+        vragenlijsten.add(finchShop.krijgVragenlijst("Voetbal"));
     }
 
     public void toonVragenlijsten() {
@@ -24,6 +24,10 @@ public class Speler extends Gebruiker {
         for (Vragenlijst vragenlijst : vragenlijsten) {
             System.out.println(vragenlijst.krijgOnderwerp());
         }
+    }
+
+    public void geefMunten(int aantalMunten) {
+        saldo += aantalMunten;
     }
 
     public void doeQuiz(String vragenlijstNaam) {
