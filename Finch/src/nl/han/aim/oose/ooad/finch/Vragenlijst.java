@@ -17,6 +17,12 @@ public class Vragenlijst {
         this.maximaleTijd = maximaleTijdInSeconden;
         this.bedrag = bedrag;
     }
+    public Vragenlijst(Vragenlijst vragenlijst){
+        this.onderwerp = vragenlijst.onderwerp;
+        this.maximaleTijd = vragenlijst.maximaleTijd;
+        this.bedrag = vragenlijst.bedrag;
+        this.vragen = vragenlijst.vragen;
+    }
 
     public String krijgOnderwerp() {
         return onderwerp;
