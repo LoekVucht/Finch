@@ -27,7 +27,9 @@ public class Quiz {
 
     public void berekenScore(Speler speler) {
         timer.stop();
-        System.out.println("Score: " + puntenBerekenmethode.geefAantalPunten(ingevoerdeAntwoorden, timer, quizvragen));
+       int score =  puntenBerekenmethode.geefAantalPunten(ingevoerdeAntwoorden, timer, quizvragen);
+        System.out.println("Score: " + score);
+        vragenlijst.werkLifeTimeBestBij(score, timer, speler);
     }
 
     public void beantwoordVraag(String antwoord) {
@@ -41,4 +43,5 @@ public class Quiz {
     public Timer getTimer() {
         return timer;
     }
+
 }

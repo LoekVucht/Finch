@@ -54,13 +54,13 @@ public class Vragenlijst {
         return vragen;
     }
 
-    public Vraag getVraag(int vraagIndex) {
+    public Vraag krijgVraag(int vraagIndex) {
         return vragen.get(vraagIndex);
     }
 
     public void werkLifeTimeBestBij(int punten, Timer time, Speler speler) {
         if (lifetimeBest == null) {
-            lifetimeBest = new LifetimeBest(punten, time, speler);
+            lifetimeBest = new LifetimeBest(punten, time);
         } else {
             lifetimeBest.controleerLifeTimeBest(punten, time, speler);
         }

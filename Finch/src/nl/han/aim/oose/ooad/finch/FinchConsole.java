@@ -46,14 +46,14 @@ public class FinchConsole {
     }
 
     private static void registreerGebruiker(FinchSpel spel, Scanner scanner) {
-        spel.voerGebruikersnaamIn();
+        System.out.println("voer uw gebruikersnaam in:");
         boolean gebruikersnaamBestaat = true;
         String gebruikersnaam = null;
         while (gebruikersnaamBestaat) {
             gebruikersnaam = scanner.nextLine();
             gebruikersnaamBestaat = spel.gebruikersnaamBestaat(gebruikersnaam);
         }
-        spel.voerWachtwoordIn();
+        System.out.println("Voer een wachtwoord in:");
         String wachtwoord = scanner.nextLine();
         spel.registreer(gebruikersnaam, wachtwoord);
     }

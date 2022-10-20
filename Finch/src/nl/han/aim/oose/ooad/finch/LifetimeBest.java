@@ -6,7 +6,7 @@ public class LifetimeBest {
     private int aantalPunten;
     private Timer timer;
 
-    public LifetimeBest(int punten, Timer time, Speler speler) {
+    public LifetimeBest(int punten, Timer time) {
         this.aantalPunten = punten;
         this.timer = time;
     }

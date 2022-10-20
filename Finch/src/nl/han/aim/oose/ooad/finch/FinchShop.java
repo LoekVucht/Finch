@@ -8,7 +8,6 @@ import java.util.List;
 public class FinchShop {
     private List<Muntenpakket> muntenpakketten;
     private static List<Thema> themas = new ArrayList<>();
-    private Speler speler;
 
     public FinchShop() {
 
