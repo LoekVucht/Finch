@@ -54,7 +54,7 @@ public class Vragenlijst {
         return vragen;
     }
 
-    public Vraag getVraag(int vraagIndex) {
+    public Vraag krijgVraag(int vraagIndex) {
         return vragen.get(vraagIndex);
     }
 

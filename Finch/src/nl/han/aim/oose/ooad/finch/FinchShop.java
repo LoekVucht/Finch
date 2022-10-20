@@ -10,22 +10,26 @@ public class FinchShop {
     private static List<Thema> themas = new ArrayList<>();
     private Speler speler;
 
-    public FinchShop() {
-
+    public FinchShop(Speler speler) {
+        this.speler = speler;
     }
+    public FinchShop(){}
 
     public void voegVragenlijstToe(String themanaam, Vragenlijst vragenlijst) {
         Thema thema = krijgThema(themanaam);
         thema.voegVragenlijstToe(vragenlijst);
     }
 
-    public Thema krijgThema(String name) {
+    public Thema krijgThema(String naam) {
         for (Thema thema : themas) {
-            if (thema.krijgNaam() == name) {
+            if (thema.krijgNaam() == naam) {
                 return thema;
             }
         }
         return null;
+    }
+    public Speler krijgSpeler(){
+     return speler;
     }
 
     public void maakThema(String themaNaam) {

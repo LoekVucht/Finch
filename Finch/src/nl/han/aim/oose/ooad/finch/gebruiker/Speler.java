@@ -11,11 +11,12 @@ public class Speler extends Gebruiker {
     private double saldo;
     private Quiz quiz;
     private List<Vragenlijst> vragenlijsten = new ArrayList<>();
-    private FinchShop finchShop = new FinchShop();
+    private FinchShop finchShop;
 
     public Speler(String gebruikersnaam, String wachtwoord) {
         super(gebruikersnaam, wachtwoord);
-
+        finchShop = new FinchShop(this);
+        geefMunten(100);
         vragenlijsten.add(finchShop.krijgVragenlijst("Voetbal"));
     }
 

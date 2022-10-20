@@ -15,9 +15,6 @@ public class FinchSpel {
         gebruikers.add(new Speler("testGebruiker", "12345"));
     }
 
-    public void voerGebruikersnaamIn() {
-        System.out.println("Voer een gebruikersnaam in:");
-    }
 
     public void registreer(String gebruikersnaam, String wachtwoord) {
         ingelogdeGebruiker = new Speler(gebruikersnaam, wachtwoord);
@@ -69,9 +66,7 @@ public class FinchSpel {
         return ((Speler) ingelogdeGebruiker).getVragenlijst(onderwerp).getMaximaleTijd();
     }
 
-    public void voerWachtwoordIn() {
-        System.out.println("Voer een wachtwoord in:");
-    }
+
 
     public boolean gebruikersnaamBestaat(String gebruikersnaam) {
         return getGebruiker(gebruikersnaam) != null;

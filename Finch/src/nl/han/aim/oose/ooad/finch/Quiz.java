@@ -14,16 +14,19 @@ public class Quiz {
     private PuntenBerekenmethode puntenBerekenmethode;
 
     public Quiz(Vragenlijst vragenlijst) {
+        puntenBerekenmethode = new NormaleBerekenmethode();
         this.vragenlijst = vragenlijst;
         quizvragen = vragenlijst.krijgRandomVragen(10);
-        puntenBerekenmethode = new NormaleBerekenmethode();
+
         timer = new Timer();
         timer.start();
     }
 
     public void berekenScore(Speler speler) {
         timer.stop();
-        System.out.println("Score: " + puntenBerekenmethode.geefAantalPunten(ingevoerdeAntwoorden, timer, quizvragen));
+       int score =  puntenBerekenmethode.geefAantalPunten(ingevoerdeAntwoorden, timer, quizvragen);
+        System.out.println("Score: " + score);
+        vragenlijst.werkLifeTimeBestBij(score, timer, speler);
     }
 
     public void beantwoordVraag(String antwoord) {
@@ -37,4 +40,5 @@ public class Quiz {
     public Timer getTimer() {
         return timer;
     }
+
 }
