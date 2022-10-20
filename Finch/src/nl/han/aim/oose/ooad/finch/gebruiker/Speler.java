@@ -52,8 +52,8 @@ public class Speler extends Gebruiker {
         quiz.getQuizvragen().get(vraagIndex).toonVraag();
     }
 
-    public void beantwoordVraag(int vraagIndex, String antwoord) {
-        quiz.beantwoordVraag(vraagIndex, antwoord);
+    public void beantwoordVraag(String antwoord) {
+        quiz.beantwoordVraag(antwoord);
     }
 
     public void berekenScore() {

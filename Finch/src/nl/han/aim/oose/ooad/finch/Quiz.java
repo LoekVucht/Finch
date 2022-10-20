@@ -30,7 +30,7 @@ public class Quiz {
         System.out.println("Score: " + puntenBerekenmethode.geefAantalPunten(ingevoerdeAntwoorden, timer, quizvragen));
     }
 
-    public void beantwoordVraag(int vraagIndex, String antwoord) {
+    public void beantwoordVraag(String antwoord) {
         ingevoerdeAntwoorden.add(new IngevoerdAntwoord(antwoord));
     }
 

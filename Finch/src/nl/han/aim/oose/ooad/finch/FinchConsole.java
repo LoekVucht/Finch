@@ -35,7 +35,7 @@ public class FinchConsole {
                 for (int gespeeldeVragen = 0; gespeeldeVragen < 10; gespeeldeVragen++) {
                     spel.toonVraag(vragenlijstInvoer, gespeeldeVragen);
                     String antwoordInvoer = scanner.nextLine();
-                    spel.beantwoordVraag(gespeeldeVragen, antwoordInvoer);
+                    spel.beantwoordVraag(antwoordInvoer);
                     System.out.println("Je hebt nog " + (spel.krijgMaximaleTijd(vragenlijstInvoer) - spel.krijgAantalSecondenVerstreken())
                             + " seconden over.");
                 }

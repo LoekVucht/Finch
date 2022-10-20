@@ -41,9 +41,9 @@ public class FinchSpel {
         }
     }
 
-    public void beantwoordVraag(int vraagIndex, String antwoord) {
+    public void beantwoordVraag(String antwoord) {
         if (ingelogdeGebruiker instanceof Speler) {
-            ((Speler) ingelogdeGebruiker).beantwoordVraag(vraagIndex, antwoord);
+            ((Speler) ingelogdeGebruiker).beantwoordVraag(antwoord);
         }
     }
 
