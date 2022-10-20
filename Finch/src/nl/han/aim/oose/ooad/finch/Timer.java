@@ -21,8 +21,4 @@ public class Timer {
     public long getStartTijdInSeconden() {
         return startTijdInSeconden;
     }
-
-    public int getTimerTijdVerstrekenInSeconden() {
-        return (int) (startTijdInSeconden - stopTijdInSeconden);
-    }
 }
