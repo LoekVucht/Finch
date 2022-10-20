@@ -18,9 +18,10 @@ public class Quiz {
     private int aantalGoed;
 
     public Quiz(Vragenlijst vragenlijst) {
+        puntenBerekenmethode = new NormaleBerekenmethode();
         this.vragenlijst = vragenlijst;
         quizvragen = vragenlijst.krijgRandomVragen(10);
-        puntenBerekenmethode = new NormaleBerekenmethode();
+
         timer = new Timer();
         timer.start();
     }

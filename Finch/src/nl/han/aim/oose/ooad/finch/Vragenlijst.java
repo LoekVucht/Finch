@@ -60,7 +60,7 @@ public class Vragenlijst {
 
     public void werkLifeTimeBestBij(int punten, Timer time, Speler speler) {
         if (lifetimeBest == null) {
-            lifetimeBest = new LifetimeBest(punten, time);
+            lifetimeBest = new LifetimeBest(punten, time, speler);
         } else {
             lifetimeBest.controleerLifeTimeBest(punten, time, speler);
         }
