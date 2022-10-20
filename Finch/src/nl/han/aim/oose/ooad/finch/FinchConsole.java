@@ -31,22 +31,19 @@ public class FinchConsole {
                 System.out.println("Deze vragenlijst bestaat niet.");
             } else {
                 spel.kiesVragenlijst(vragenlijstInvoer);
-                System.out.println("Je hebt " + spel.krijgMaximaleTijd(vragenlijstInvoer) + " seconden de tijd.");
                 for (int gespeeldeVragen = 0; gespeeldeVragen < 10; gespeeldeVragen++) {
                     spel.toonVraag(vragenlijstInvoer, gespeeldeVragen);
                     String antwoordInvoer = scanner.nextLine();
                     spel.beantwoordVraag(antwoordInvoer);
-                    System.out.println("Je hebt nog " + (spel.krijgMaximaleTijd(vragenlijstInvoer) - spel.krijgAantalSecondenVerstreken())
-                            + " seconden over.");
+                    spel.berekenScore();
+                    break;
                 }
-                spel.berekenScore();
-                break;
             }
         }
     }
 
     private static void registreerGebruiker(FinchSpel spel, Scanner scanner) {
-        System.out.println("voer uw gebruikersnaam in:");
+        System.out.println("Voer een gebruikersnaam in:");
         boolean gebruikersnaamBestaat = true;
         String gebruikersnaam = null;
         while (gebruikersnaamBestaat) {
@@ -78,7 +75,7 @@ public class FinchConsole {
         vraag3.voegAntwoordToe(new Antwoordoptie("basketbal", false));
         vraag3.voegAntwoordToe(new Antwoordoptie("voetbal", true));
         vraag3.voegAntwoordToe(new Antwoordoptie("skippybal", false));
-        vraag3.voegAntwoordToe(new Antwoordoptie("bal", false));
+        vraag3.voegAntwoordToe(new Antwoordoptie("volleybal", false));
         medewerker.voegVraagToe(vraag3);
 
         OpenVraag vraag4 = new OpenVraag("In welk land zal het WK 2022 worden gehouden?");

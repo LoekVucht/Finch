@@ -66,8 +66,6 @@ public class FinchSpel {
         return ((Speler) ingelogdeGebruiker).getVragenlijst(onderwerp).getMaximaleTijd();
     }
 
-
-
     public boolean gebruikersnaamBestaat(String gebruikersnaam) {
         return getGebruiker(gebruikersnaam) != null;
     }
