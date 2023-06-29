@@ -1,6 +1,7 @@
 package nl.han.aim.oose.ooad.finch;
 
 import nl.han.aim.oose.ooad.finch.gebruiker.Speler;
+import nl.han.aim.oose.ooad.finch.vraag.Vraag;
 
 import java.util.List;
 
@@ -15,7 +16,7 @@ public class FinchSpelController {
         return finchSpel.spelenQuiz();
     }
 
-    public Vragenlijst beginQuiz(String vragenlijstNaam) {
+    public List<Vraag> beginQuiz(String vragenlijstNaam) {
         return finchSpel.beginQuiz(vragenlijstNaam);
     }
 

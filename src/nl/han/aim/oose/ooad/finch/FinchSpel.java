@@ -2,6 +2,7 @@ package nl.han.aim.oose.ooad.finch;
 
 import nl.han.aim.oose.ooad.finch.gebruiker.Gebruiker;
 import nl.han.aim.oose.ooad.finch.gebruiker.Speler;
+import nl.han.aim.oose.ooad.finch.vraag.Vraag;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +32,7 @@ public class FinchSpel {
         return getSpeler().getVragenlijsten();
    }
 
-    public Vragenlijst beginQuiz(String vragenlijstNaam) {
+    public List<Vraag> beginQuiz(String vragenlijstNaam) {
         return speler.beginQuiz(vragenlijstNaam);
     }
 

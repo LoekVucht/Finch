@@ -34,12 +34,12 @@ public class FinchConsole {
             String vragenlijstInvoer = scanner.nextLine();
 
             try {
-                Vragenlijst vragenlijst = spelController.beginQuiz(vragenlijstInvoer);
+                List<Vraag> vragenlijst = spelController.beginQuiz(vragenlijstInvoer);
                 List<String> antwoorden = new ArrayList<>();
                 for (int gespeeldeVragen = 0; gespeeldeVragen < 10; gespeeldeVragen++) {
-                    System.out.println(vragenlijst.krijgVraag(gespeeldeVragen).getVraag());
-                    if (vragenlijst.krijgVraag(gespeeldeVragen) instanceof Meerkeuzevraag) {
-                        for (Antwoordoptie antwoordOptie : ((Meerkeuzevraag) vragenlijst.krijgVraag(gespeeldeVragen)).getAntwoordopties()) {
+                    System.out.println(vragenlijst.get(gespeeldeVragen).getVraag());
+                    if (vragenlijst.get(gespeeldeVragen) instanceof Meerkeuzevraag) {
+                        for (Antwoordoptie antwoordOptie : ((Meerkeuzevraag) vragenlijst.get(gespeeldeVragen)).getAntwoordopties()) {
                             System.out.println(antwoordOptie.getAntwoord());
                         }
                     }
