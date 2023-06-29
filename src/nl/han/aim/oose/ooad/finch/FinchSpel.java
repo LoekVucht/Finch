@@ -39,10 +39,6 @@ public class FinchSpel {
         return speler.eindigQuiz(antwoorden, speler);
     }
 
-    public boolean vragenlijstBestaat(String onderwerp) {
-            return speler.vragenlijstBestaat(onderwerp);
-    }
-
     private boolean gebruikersnaamBestaat(String gebruikersnaam) {
         for (Gebruiker gebruiker : gebruikers) {
             if (gebruiker.getGebruikersnaam().equals(gebruikersnaam)) {

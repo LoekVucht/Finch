@@ -33,10 +33,10 @@ public class FinchConsole {
         while (true) {
             System.out.println("Voer een vragenlijst in:");
             String vragenlijstInvoer = scanner.nextLine();
-            if (!spelController.vragenlijstBestaat(vragenlijstInvoer)) {
-                System.out.println("Deze vragenlijst bestaat niet.");
-            } else {
+
+            try {
                 Vragenlijst vragenlijst = spelController.beginQuiz(vragenlijstInvoer);
+                System.out.println("Deze vragenlijst bestaat niet");
                 List<String> antwoorden = new ArrayList<>();
                 for (int gespeeldeVragen = 0; gespeeldeVragen < 10; gespeeldeVragen++) {
                     System.out.println(vragenlijst.krijgVraag(gespeeldeVragen).getVraag());
@@ -50,6 +50,8 @@ public class FinchConsole {
                 }
                 System.out.println("Score: " + spelController.eindigQuiz(antwoorden, spelController.getFinchSpel().getSpeler()));
                 break;
+            } catch (NullPointerException e) {
+                System.out.println("Deze vragenlijst bestaat niet.");
             }
         }
     }

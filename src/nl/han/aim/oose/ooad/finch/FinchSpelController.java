@@ -19,10 +19,6 @@ public class FinchSpelController {
         return finchSpel.beginQuiz(vragenlijstNaam);
     }
 
-    public boolean vragenlijstBestaat(String onderwerp) {
-        return finchSpel.vragenlijstBestaat(onderwerp);
-    }
-
     public int eindigQuiz(List<String> antwoorden, Speler speler) {
         return finchSpel.eindigQuiz(antwoorden, speler);
     }

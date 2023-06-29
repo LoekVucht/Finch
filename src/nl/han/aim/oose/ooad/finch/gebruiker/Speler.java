@@ -35,10 +35,6 @@ public class Speler extends Gebruiker {
         return vragenlijst;
     }
 
-    public boolean vragenlijstBestaat(String onderwerp) {
-        return getVragenlijst(onderwerp) != null;
-    }
-
     private Vragenlijst getVragenlijst(String onderwerp) {
         for (Vragenlijst vragenlijst : vragenlijsten) {
             if (vragenlijst.krijgOnderwerp().equalsIgnoreCase(onderwerp)) {
@@ -58,7 +54,7 @@ public class Speler extends Gebruiker {
         return getQuiz().eindigQuiz(speler, antwoorden);
     }
 
-    private Quiz getQuiz() {
+    public Quiz getQuiz() {
         return quiz;
     }
 }
