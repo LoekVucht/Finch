@@ -53,8 +53,8 @@ public class Speler extends Gebruiker {
         }
     }
 
-    public int eindigQuiz(List<String> antwoorden, Speler speler) {
-        return getQuiz().eindigQuiz(speler, antwoorden);
+    public int eindigQuiz(List<String> antwoorden) {
+        return getQuiz().eindigQuiz(this, antwoorden);
     }
 
     public Quiz getQuiz() {

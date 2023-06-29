@@ -16,8 +16,8 @@ public class FinchSpelController {
         return finchSpel.spelenQuiz(gebruikersnaam);
     }
 
-    public List<Vraag> beginQuiz(String vragenlijstNaam) {
-        return finchSpel.beginQuiz(vragenlijstNaam);
+    public List<Vraag> beginQuiz(String vragenlijstNaam,String gebruikersnaam) {
+        return finchSpel.beginQuiz(vragenlijstNaam,gebruikersnaam);
     }
 
     public int eindigQuiz(List<String> antwoorden, String gebruikersnaam) {

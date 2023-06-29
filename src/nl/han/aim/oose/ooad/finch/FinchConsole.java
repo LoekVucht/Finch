@@ -35,7 +35,7 @@ public class FinchConsole {
             String vragenlijstInvoer = scanner.nextLine();
 
             try {
-                List<Vraag> vragenlijst = spelController.beginQuiz(vragenlijstInvoer);
+                List<Vraag> vragenlijst = spelController.beginQuiz(vragenlijstInvoer,gebruikersnaamVanNieuweGebruiker);
                 List<String> antwoorden = new ArrayList<>();
                 for (int gespeeldeVragen = 0; gespeeldeVragen < 10; gespeeldeVragen++) {
                     System.out.println(vragenlijst.get(gespeeldeVragen).getVraag());

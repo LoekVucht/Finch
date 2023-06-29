@@ -11,7 +11,7 @@ public class FinchSpel {
     private List<Speler> spelers = new ArrayList<>();
 
     private List<Thema> themas = new ArrayList<>();
-    private Speler speler = null;
+
 
     public FinchSpel() {
         spelers.add(new Speler("testGebruiker", "12345"));
@@ -23,7 +23,8 @@ public class FinchSpel {
             return "niet succesvol";
         }
         else {
-            speler = new Speler(gebruikersnaam, wachtwoord);
+            Speler speler = new Speler(gebruikersnaam, wachtwoord);
+            spelers.add(speler);
             return "succesvol";
         }
     }
@@ -32,13 +33,13 @@ public class FinchSpel {
         return getSpeler(gebruikersnaam).getVragenlijsten();
    }
 
-    public List<Vraag> beginQuiz(String vragenlijstNaam) {
-        return speler.beginQuiz(vragenlijstNaam);
+    public List<Vraag> beginQuiz(String vragenlijstNaam,String gebruikersnaam) {
+        return getSpeler(gebruikersnaam).beginQuiz(vragenlijstNaam);
     }
 
     public int eindigQuiz(List<String> antwoorden, String gebruikersnaam) {
-        speler = getSpeler(gebruikersnaam);
-        return speler.eindigQuiz(antwoorden, speler);
+
+        return getSpeler(gebruikersnaam).eindigQuiz(antwoorden);
     }
 
     private boolean gebruikersnaamBestaat(String gebruikersnaam) {
@@ -50,10 +51,10 @@ public class FinchSpel {
         return false;
     }
     public Speler getSpeler(String gebruikersnaam) {
-        for (Gebruiker speler: spelers){
-            speler.getGebruikersnaam().equals(gebruikersnaam);
+        for (Speler speler: spelers){
+          if(  speler.getGebruikersnaam().equals(gebruikersnaam)){
+              return speler;
+          }
         }
-
-        return speler;
     }
 }
