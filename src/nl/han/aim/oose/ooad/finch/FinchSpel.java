@@ -32,7 +32,7 @@ public class FinchSpel {
    }
 
     public Vragenlijst beginQuiz(String vragenlijstNaam) {
-        return speler.doeQuiz(vragenlijstNaam);
+        return speler.beginQuiz(vragenlijstNaam);
     }
 
     public int eindigQuiz(List<String> antwoorden, Speler speler) {

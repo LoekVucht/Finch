@@ -28,7 +28,7 @@ public class Speler extends Gebruiker {
         saldo += aantalMunten;
     }
 
-    public Vragenlijst doeQuiz(String onderwerp) {
+    public Vragenlijst beginQuiz(String onderwerp) {
         Vragenlijst vragenlijst = getVragenlijst(onderwerp);
         quiz = new Quiz(vragenlijst);
         quiz.start();
