@@ -28,15 +28,16 @@ public class FinchSpel {
         }
     }
 
-    public List<Vragenlijst> spelenQuiz() {
-        return getSpeler().getVragenlijsten();
+    public List<Vragenlijst> spelenQuiz(String gebruikersnaam) {
+        return getGebruiker(gebruikersnaam).getVragenlijsten();
    }
 
     public List<Vraag> beginQuiz(String vragenlijstNaam) {
         return speler.beginQuiz(vragenlijstNaam);
     }
 
-    public int eindigQuiz(List<String> antwoorden, Speler speler) {
+    public int eindigQuiz(List<String> antwoorden, String gebruikersnaam) {
+        speler = getGebruiker(gebruikersnaam);
         return speler.eindigQuiz(antwoorden, speler);
     }
 
@@ -48,7 +49,11 @@ public class FinchSpel {
         }
         return false;
     }
-    public Speler getSpeler() {
+    public Speler getGebruiker(String gebruikersnaam) {
+        for (Gebruiker gebruiker: gebruikers){
+            gebruiker.getGebruikersnaam().equals(gebruikersnaam);
+        }
+
         return speler;
     }
 }
