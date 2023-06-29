@@ -24,7 +24,7 @@ public class FinchSpelController {
         return finchSpel.eindigQuiz(antwoorden, gebruikersnaam);
     }
 
-    public FinchSpel getFinchSpel() {
+    public FinchSpel krijgFinchSpel() {
         return finchSpel;
     }
 }

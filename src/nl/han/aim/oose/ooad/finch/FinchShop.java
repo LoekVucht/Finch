@@ -16,11 +16,11 @@ public class FinchShop {
     public FinchShop(){}
 
     public void voegVragenlijstToe(String themanaam, Vragenlijst vragenlijst) {
-        Thema thema = krijgThema(themanaam);
+        Thema thema = getThema(themanaam);
         thema.voegVragenlijstToe(vragenlijst);
     }
 
-    public Thema krijgThema(String naam) {
+    public Thema getThema(String naam) {
         for (Thema thema : themas) {
             if (thema.krijgNaam() == naam) {
                 return thema;
