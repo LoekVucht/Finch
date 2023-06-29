@@ -26,7 +26,6 @@ public class FinchConsole {
                 for (Vragenlijst vragenlijst : spelController.spelenQuiz()) {
                     System.out.println(vragenlijst.krijgOnderwerp());
                 }
-                spelController.spelenQuiz();
                 break;
             }
         }
@@ -36,7 +35,6 @@ public class FinchConsole {
 
             try {
                 Vragenlijst vragenlijst = spelController.beginQuiz(vragenlijstInvoer);
-                System.out.println("Deze vragenlijst bestaat niet");
                 List<String> antwoorden = new ArrayList<>();
                 for (int gespeeldeVragen = 0; gespeeldeVragen < 10; gespeeldeVragen++) {
                     System.out.println(vragenlijst.krijgVraag(gespeeldeVragen).getVraag());
