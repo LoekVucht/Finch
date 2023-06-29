@@ -54,9 +54,6 @@ public class Vragenlijst {
         return vragen;
     }
 
-    public Vraag krijgVraag(int vraagIndex) {
-        return vragen.get(vraagIndex);
-    }
 
     public void werkLifeTimeBestBij(int score, Speler speler) {
         if (getLifetimeBest() == null) {

@@ -3,6 +3,7 @@ package nl.han.aim.oose.ooad.finch.gebruiker;
 import nl.han.aim.oose.ooad.finch.FinchShop;
 import nl.han.aim.oose.ooad.finch.Quiz;
 import nl.han.aim.oose.ooad.finch.Vragenlijst;
+import nl.han.aim.oose.ooad.finch.vraag.Vraag;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,11 +29,13 @@ public class Speler extends Gebruiker {
         saldo += aantalMunten;
     }
 
-    public Vragenlijst beginQuiz(String onderwerp) {
+    public List<Vraag> beginQuiz(String onderwerp) {
         Vragenlijst vragenlijst = getVragenlijst(onderwerp);
+
         quiz = new Quiz(vragenlijst);
+
         quiz.start();
-        return vragenlijst;
+        return quiz.getRandomVragen();
     }
 
     private Vragenlijst getVragenlijst(String onderwerp) {

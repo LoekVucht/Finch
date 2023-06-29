@@ -15,9 +15,12 @@ public class Quiz {
     public Quiz(Vragenlijst vragenlijst) {
         resultatenBerekenmethode = new NormaleBerekenmethode();
         this.vragenlijst = vragenlijst;
-        quizvragen = vragenlijst.getRandomVragen(10);
-    }
 
+    }
+public List<Vraag> getRandomVragen(){
+    quizvragen = vragenlijst.getRandomVragen(10);
+    return quizvragen;
+}
     public void start() {
         timer = new Timer();
         timer.start();
