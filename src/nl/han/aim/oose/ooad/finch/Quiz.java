@@ -10,7 +10,6 @@ public class Quiz {
     private Timer timer;
     private Vragenlijst vragenlijst;
     private List<Vraag> quizvragen;
-    private List<IngevoerdAntwoord> ingevoerdeAntwoorden = new ArrayList<>();
     private ResultatenBerekenmethode resultatenBerekenmethode;
 
     public Quiz(Vragenlijst vragenlijst) {
@@ -39,10 +38,6 @@ public class Quiz {
 
     public Timer getTimer() {
         return timer;
-    }
-
-    public List<IngevoerdAntwoord> getIngevoerdeAntwoorden() {
-        return ingevoerdeAntwoorden;
     }
 
     private ResultatenBerekenmethode getResultatenBerekenmethode() {
