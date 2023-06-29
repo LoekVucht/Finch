@@ -28,8 +28,8 @@ public List<Vraag> getRandomVragen(){
 
     public int eindigQuiz(Speler speler, List<String> antwoorden) {
         timer.stop();
-        int score = getResultatenBerekenmethode().berekenScore(antwoorden, timer, this.vragenlijst.getVragen());
-        getVragenlijst().werkLifeTimeBestBij(score, speler);
+        int score = getResultatenBerekenmethode().berekenScore(antwoorden, timer, quizvragen);
+        getVragenlijst().werkLifeTimeBestBij(score);
         int munten = getResultatenBerekenmethode().berekenMunten(antwoorden, this.vragenlijst.getVragen());
         speler.geefMunten(munten);
         return score;

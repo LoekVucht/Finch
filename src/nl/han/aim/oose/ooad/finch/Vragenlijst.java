@@ -25,6 +25,7 @@ public class Vragenlijst {
         this.maximaleTijdInSeconden = vragenlijst.maximaleTijdInSeconden;
         this.bedrag = vragenlijst.bedrag;
         this.vragen = vragenlijst.vragen;
+        this.lifetimeBest = new LifetimeBest();
     }
 
     public String krijgOnderwerp() {
@@ -55,12 +56,8 @@ public class Vragenlijst {
     }
 
 
-    public void werkLifeTimeBestBij(int score, Speler speler) {
-        if (getLifetimeBest() == null) {
-            lifetimeBest = new LifetimeBest(score, speler);
-        } else {
+    public void werkLifeTimeBestBij(int score) {
             getLifetimeBest().werkLifetimeBestBij(score);
-        }
     }
 
     public List<Vraag> getVragen() {

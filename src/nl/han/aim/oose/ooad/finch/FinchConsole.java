@@ -64,7 +64,7 @@ public class FinchConsole {
             if (spelController.registreer(gebruikersnaam, wachtwoord) == "niet succesvol") {
                 System.out.println("Deze gebruikersnaam bestaat al.");
             }
-            else if (spelController.registreer(gebruikersnaam, wachtwoord) == "succesvol") {
+            else{
                 System.out.println("Je hebt een account aangemaakt!");
                 gebruikersnaamVanNieuweGebruiker = gebruikersnaam;
                 break;

@@ -56,5 +56,6 @@ public class FinchSpel {
               return speler;
           }
         }
+        return null;
     }
 }
