@@ -9,20 +9,20 @@ import java.util.Random;
 
 public class Vragenlijst {
     private String onderwerp;
-    private int maximaleTijd;
+    private int maximaleTijdInSeconden;
     private double bedrag;
     private LifetimeBest lifetimeBest;
     private List<Vraag> vragen = new ArrayList<>();
 
     public Vragenlijst(String onderwerp, int maximaleTijdInSeconden, double bedrag) {
         this.onderwerp = onderwerp;
-        this.maximaleTijd = maximaleTijdInSeconden;
+        this.maximaleTijdInSeconden = maximaleTijdInSeconden;
         this.bedrag = bedrag;
     }
 
     public Vragenlijst(Vragenlijst vragenlijst) {
         this.onderwerp = vragenlijst.onderwerp;
-        this.maximaleTijd = vragenlijst.maximaleTijd;
+        this.maximaleTijdInSeconden = vragenlijst.maximaleTijdInSeconden;
         this.bedrag = vragenlijst.bedrag;
         this.vragen = vragenlijst.vragen;
     }
@@ -64,10 +64,6 @@ public class Vragenlijst {
         } else {
             getLifetimeBest().werkLifetimeBestBij(score);
         }
-    }
-
-    public int getMaximaleTijd() {
-        return maximaleTijd;
     }
 
     public List<Vraag> getVragen() {

@@ -10,5 +10,4 @@ public class Antwoord {
     public String getAntwoord() {
         return antwoord;
     }
-
 }

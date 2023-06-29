@@ -21,5 +21,4 @@ public class OpenVraag extends Vraag{
         }
         return false;
     }
-
 }

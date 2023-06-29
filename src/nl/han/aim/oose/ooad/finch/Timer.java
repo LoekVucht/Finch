@@ -14,7 +14,7 @@ public class Timer {
         stopTijdInSeconden = getAantalSysteemSecondenVerstreken();
     }
 
-    public long getAantalSysteemSecondenVerstreken() {
+    private long getAantalSysteemSecondenVerstreken() {
         return TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis());
     }
 
