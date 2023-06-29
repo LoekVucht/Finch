@@ -8,13 +8,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FinchSpel {
-    private List<Gebruiker> gebruikers = new ArrayList<>();
+    private List<Speler> spelers = new ArrayList<>();
 
     private List<Thema> themas = new ArrayList<>();
     private Speler speler = null;
 
     public FinchSpel() {
-        gebruikers.add(new Speler("testGebruiker", "12345"));
+        spelers.add(new Speler("testGebruiker", "12345"));
     }
 
 
@@ -29,7 +29,7 @@ public class FinchSpel {
     }
 
     public List<Vragenlijst> spelenQuiz(String gebruikersnaam) {
-        return getGebruiker(gebruikersnaam).getVragenlijsten();
+        return getSpeler(gebruikersnaam).getVragenlijsten();
    }
 
     public List<Vraag> beginQuiz(String vragenlijstNaam) {
@@ -37,21 +37,21 @@ public class FinchSpel {
     }
 
     public int eindigQuiz(List<String> antwoorden, String gebruikersnaam) {
-        speler = getGebruiker(gebruikersnaam);
+        speler = getSpeler(gebruikersnaam);
         return speler.eindigQuiz(antwoorden, speler);
     }
 
     private boolean gebruikersnaamBestaat(String gebruikersnaam) {
-        for (Gebruiker gebruiker : gebruikers) {
-            if (gebruiker.getGebruikersnaam().equals(gebruikersnaam)) {
+        for (Speler speler : spelers) {
+            if (speler.getGebruikersnaam().equals(gebruikersnaam)) {
                 return true;
             }
         }
         return false;
     }
-    public Speler getGebruiker(String gebruikersnaam) {
-        for (Gebruiker gebruiker: gebruikers){
-            gebruiker.getGebruikersnaam().equals(gebruikersnaam);
+    public Speler getSpeler(String gebruikersnaam) {
+        for (Gebruiker speler: spelers){
+            speler.getGebruikersnaam().equals(gebruikersnaam);
         }
 
         return speler;
