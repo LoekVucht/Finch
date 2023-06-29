@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class FinchConsole {
+    private static String gebruikersnaamVanNieuweGebruiker;
     public static void main(String[] args) {
         setup();
         FinchSpelController finchSpelController = new FinchSpelController();
@@ -23,7 +24,7 @@ public class FinchConsole {
             String invoer = scanner.nextLine();
             if (invoer.equalsIgnoreCase("S")) {
                 System.out.println("Je bezit de volgende vragenlijsten:");
-                for (Vragenlijst vragenlijst : spelController.spelenQuiz()) {
+                for (Vragenlijst vragenlijst : spelController.spelenQuiz(gebruikersnaamVanNieuweGebruiker)) {
                     System.out.println(vragenlijst.krijgOnderwerp());
                 }
                 break;
@@ -46,7 +47,7 @@ public class FinchConsole {
                     String antwoordInvoer = scanner.nextLine();
                     antwoorden.add(antwoordInvoer);
                 }
-                System.out.println("Score: " + spelController.eindigQuiz(antwoorden, spelController.getFinchSpel().getSpeler()));
+                System.out.println("Score: " + spelController.eindigQuiz(antwoorden, gebruikersnaamVanNieuweGebruiker));
                 break;
             } catch (NullPointerException e) {
                 System.out.println("Deze vragenlijst bestaat niet.");
@@ -65,6 +66,7 @@ public class FinchConsole {
             }
             else if (spelController.registreer(gebruikersnaam, wachtwoord) == "succesvol") {
                 System.out.println("Je hebt een account aangemaakt!");
+                gebruikersnaamVanNieuweGebruiker = gebruikersnaam;
                 break;
             }
         }

@@ -12,16 +12,16 @@ public class FinchSpelController {
         return finchSpel.registreer(gebruikersnaam, wachtwoord);
     }
 
-    public List<Vragenlijst> spelenQuiz() {
-        return finchSpel.spelenQuiz();
+    public List<Vragenlijst> spelenQuiz(String gebruikersnaam) {
+        return finchSpel.spelenQuiz(gebruikersnaam);
     }
 
     public List<Vraag> beginQuiz(String vragenlijstNaam) {
         return finchSpel.beginQuiz(vragenlijstNaam);
     }
 
-    public int eindigQuiz(List<String> antwoorden, Speler speler) {
-        return finchSpel.eindigQuiz(antwoorden, speler);
+    public int eindigQuiz(List<String> antwoorden, String gebruikersnaam) {
+        return finchSpel.eindigQuiz(antwoorden, gebruikersnaam);
     }
 
     public FinchSpel getFinchSpel() {
