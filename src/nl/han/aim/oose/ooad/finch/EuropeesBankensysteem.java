@@ -1,8 +1,7 @@
 package nl.han.aim.oose.ooad.finch;
 
-public class EuropeesBankensysteem implements BetalingsserviceAdapter {
-    @Override
-    public void betaal() {
+public class EuropeesBankensysteem {
+    public void betaal(double bedrag, String rekeningnummer) {
 
     }
 }
