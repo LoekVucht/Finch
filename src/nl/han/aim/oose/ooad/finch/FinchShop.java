@@ -9,7 +9,7 @@ public class FinchShop {
     private List<Muntenpakket> muntenpakketten;
     private static List<Thema> themas = new ArrayList<>();
     private Speler speler;
-
+    private BetalingsserviceAdapter betalingsserviceAdapter = new EuropeesBankensysteemAdapter();
     public FinchShop(Speler speler) {
         this.speler = speler;
     }
@@ -50,5 +50,17 @@ public class FinchShop {
         List<Vragenlijst> vragenlijsten = new ArrayList<>();
         vragenlijsten.add(krijgVragenlijst("Voetbal"));
         return vragenlijsten;
+    }
+
+    public void setBetalingsserviceAdapter(BetalingsserviceAdapter betalingsserviceAdapter) {
+        this.betalingsserviceAdapter = betalingsserviceAdapter;
+    }
+
+    public BetalingsserviceAdapter getBetalingsserviceAdapter() {
+        return betalingsserviceAdapter;
+    }
+
+    public boolean betaal(double bedrag, String rekeningnummer) {
+        return betalingsserviceAdapter.betalingVoltooien(bedrag, rekeningnummer);
     }
 }
